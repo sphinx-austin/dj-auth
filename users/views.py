@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 
+# import within
+from .forms import CreateUserForm 
 
 
 
@@ -12,7 +14,12 @@ from django.contrib.auth.forms import UserCreationForm
 
 # register
 def registerPage(request):
-    form = UserCreationForm()
+    form = CreateUserForm ()
+
+    if request.method == 'POST':
+        form = CreateUserForm (request.POST)
+        if form.is_valid():
+            form.save()
 
     context = {'form':form}
     return render(request, 'users/register.html', context)
