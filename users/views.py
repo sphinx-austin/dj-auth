@@ -18,7 +18,7 @@ from .forms import CreateUserForm
 # Create your views here.
 
 
-# register
+# REGISTER
 def registerPage(request):
     if request.user.is_authenticated:
         return redirect('home')
