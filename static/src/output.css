@@ -1239,6 +1239,10 @@ input:checked + .toggle-bg {
   margin-top: 2rem;
 }
 
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -1638,6 +1642,12 @@ input:checked + .toggle-bg {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -1800,6 +1810,11 @@ input:checked + .toggle-bg {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-green-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(4 108 78 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1852,6 +1867,10 @@ input:checked + .toggle-bg {
 
 .p-px {
   padding: 1px;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-2 {
@@ -1922,6 +1941,21 @@ input:checked + .toggle-bg {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pl-20 {
@@ -2012,6 +2046,10 @@ input:checked + .toggle-bg {
   font-weight: 600;
 }
 
+.font-light {
+  font-weight: 300;
+}
+
 .leading-5 {
   line-height: 1.25rem;
 }
@@ -2030,6 +2068,10 @@ input:checked + .toggle-bg {
 
 .leading-9 {
   line-height: 2.25rem;
+}
+
+.leading-tight {
+  line-height: 1.25;
 }
 
 .tracking-tight {
@@ -2274,6 +2316,11 @@ input:checked + .toggle-bg {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-green-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(3 84 63 / var(--tw-bg-opacity));
+}
+
 .hover\:text-blue-600:hover {
   --tw-text-opacity: 1;
   color: rgb(28 100 242 / var(--tw-text-opacity));
@@ -2339,6 +2386,11 @@ input:checked + .toggle-bg {
   --tw-ring-color: rgb(88 80 236 / var(--tw-ring-opacity));
 }
 
+.focus\:ring-green-300:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(132 225 188 / var(--tw-ring-opacity));
+}
+
 .focus-visible\:outline:focus-visible {
   outline-style: solid;
 }
@@ -2366,6 +2418,10 @@ input:checked + .toggle-bg {
 :is(.dark .dark\:divide-gray-600) > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-divide-opacity));
+}
+
+:is(.dark .dark\:border) {
+  border-width: 1px;
 }
 
 :is(.dark .dark\:border-blue-500) {
@@ -2416,6 +2472,11 @@ input:checked + .toggle-bg {
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
+:is(.dark .dark\:bg-green-600) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 122 85 / var(--tw-bg-opacity));
+}
+
 :is(.dark .dark\:bg-opacity-80) {
   --tw-bg-opacity: 0.8;
 }
@@ -2440,6 +2501,25 @@ input:checked + .toggle-bg {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+:is(.dark .dark\:text-gray-300) {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+
+:is(.dark .dark\:placeholder-gray-400)::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+}
+
+:is(.dark .dark\:placeholder-gray-400)::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+}
+
+:is(.dark .dark\:ring-offset-gray-800) {
+  --tw-ring-offset-color: #1F2937;
+}
+
 :is(.dark .dark\:hover\:bg-blue-700:hover) {
   --tw-bg-opacity: 1;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
@@ -2460,6 +2540,11 @@ input:checked + .toggle-bg {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
+:is(.dark .dark\:hover\:bg-green-700:hover) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(4 108 78 / var(--tw-bg-opacity));
+}
+
 :is(.dark .dark\:hover\:text-blue-500:hover) {
   --tw-text-opacity: 1;
   color: rgb(63 131 248 / var(--tw-text-opacity));
@@ -2475,9 +2560,24 @@ input:checked + .toggle-bg {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+:is(.dark .dark\:focus\:border-blue-500:focus) {
+  --tw-border-opacity: 1;
+  border-color: rgb(63 131 248 / var(--tw-border-opacity));
+}
+
 :is(.dark .dark\:focus\:ring-gray-600:focus) {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(75 85 99 / var(--tw-ring-opacity));
+}
+
+:is(.dark .dark\:focus\:ring-green-800:focus) {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(3 84 63 / var(--tw-ring-opacity));
+}
+
+:is(.dark .dark\:focus\:ring-blue-500:focus) {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
 }
 
 @media (min-width: 640px) {
@@ -2517,6 +2617,10 @@ input:checked + .toggle-bg {
     width: 72.1875rem;
   }
 
+  .sm\:max-w-md {
+    max-width: 28rem;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2535,6 +2639,10 @@ input:checked + .toggle-bg {
 
   .sm\:p-10 {
     padding: 2.5rem;
+  }
+
+  .sm\:p-8 {
+    padding: 2rem;
   }
 
   .sm\:px-16 {
@@ -2623,6 +2731,10 @@ input:checked + .toggle-bg {
     display: none;
   }
 
+  .md\:h-screen {
+    height: 100vh;
+  }
+
   .md\:w-auto {
     width: auto;
   }
@@ -2635,6 +2747,12 @@ input:checked + .toggle-bg {
     --tw-space-x-reverse: 0;
     margin-right: calc(2rem * var(--tw-space-x-reverse));
     margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .md\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
   }
 
   .md\:border-0 {
@@ -2660,6 +2778,11 @@ input:checked + .toggle-bg {
 
   .md\:pt-24 {
     padding-top: 6rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .md\:text-blue-700 {
@@ -2817,6 +2940,11 @@ input:checked + .toggle-bg {
     padding-bottom: 8rem;
   }
 
+  .lg\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
   .lg\:pr-8 {
     padding-right: 2rem;
   }
@@ -2849,5 +2977,9 @@ input:checked + .toggle-bg {
 
   .xl\:origin-center {
     transform-origin: center;
+  }
+
+  .xl\:p-0 {
+    padding: 0px;
   }
 }
