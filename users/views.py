@@ -4,6 +4,12 @@ from django.http import HttpResponse
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 
+
+from django.contrib.auth import authenticate, login, logout
+
+
+from django.contrib import messages
+
 # import within
 from .forms import CreateUserForm 
 
@@ -20,18 +26,32 @@ def registerPage(request):
         form = CreateUserForm (request.POST)
         if form.is_valid():
             form.save()
+            user = form.cleaned_data.get('username')
+            success_message = messages.success(request, 'Account successfully created for '+ user)
+            return redirect('login')
 
     context = {'form':form}
     return render(request, 'users/register.html', context)
 
 # LOGIN
 def loginPage(request):
-    form = UserCreationForm()
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
-    context = {'form':form}
-    return render(request, 'users/login.html', context)
+        user = authenticate(request, username=username, password=password)
 
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.info(request, 'Username or Password is incorrect!')
 
+    return render(request, 'users/login.html')
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
 
 
 
