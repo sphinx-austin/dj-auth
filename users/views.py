@@ -4,9 +4,9 @@ from django.http import HttpResponse
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 
-
 from django.contrib.auth import authenticate, login, logout
 
+from django.contrib.auth.decorators import login_required  
 
 from django.contrib import messages
 
@@ -54,24 +54,6 @@ def logoutUser(request):
     return redirect('login')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@login_required(login_url='login')
 def index(request):
     return render(request, 'users/index.html')
